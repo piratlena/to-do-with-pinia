@@ -22,4 +22,9 @@ export const useTaskStore = defineStore("taskStore", {
       return state.tasks.length;
     },
   },
+  actions: {
+    addTask(task) {
+      this.tasks.push(task);
+    },
+  },
 });
