@@ -18,6 +18,13 @@
     </nav>
 
     <div
+      class="loading"
+      v-if="taskStore.loading"
+    >
+      Loading tasks
+    </div>
+
+    <div
       class="task-list"
       v-if="filter === 'all'"
     >
@@ -54,6 +61,8 @@ export default {
   components: { TaskDetails, TaskForm },
   setup() {
     const taskStore = useTaskStore();
+
+    taskStore.getTasks();
     const filter = ref("all");
     return { taskStore, filter };
   },
