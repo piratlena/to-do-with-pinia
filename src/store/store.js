@@ -59,7 +59,7 @@ export const useTaskStore = defineStore("taskStore", {
       task.isFavorite = !task.isFavorite;
 
       try {
-        const response = await fetch("http://localhost:3000/tasks", {
+        const response = await fetch("http://localhost:3000/tasks/" + id, {
           method: "PATCH",
           body: JSON.stringify({ isFavorite: task.isFavorite }),
           headers: { "Content-Type": "application/json" },
