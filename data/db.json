@@ -1,9 +1,29 @@
 {
   "tasks": [
-    { "id": 1, "taskTitle": "Work on Projects", "isFavorite": true },
-    { "id": 2, "taskTitle": "Listhen to music", "isFavorite": false },
-    { "id": 3, "taskTitle": "Being cool", "isFavorite": false },
-    { "id": 4, "taskTitle": "Sit back and relax", "isFavorite": false },
-    { "id": 5, "taskTitle": "Go for a walk", "isFavorite": true }
+    {
+      "id": 1,
+      "taskTitle": "Work on Projects",
+      "isFavorite": true
+    },
+    {
+      "id": 2,
+      "taskTitle": "Listhen to music",
+      "isFavorite": false
+    },
+    {
+      "id": 3,
+      "taskTitle": "Being cool",
+      "isFavorite": false
+    },
+    {
+      "id": 4,
+      "taskTitle": "Sit back and relax",
+      "isFavorite": false
+    },
+    {
+      "id": 5,
+      "taskTitle": "Go for a walk",
+      "isFavorite": true
+    }
   ]
 }

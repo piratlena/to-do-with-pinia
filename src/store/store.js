@@ -30,17 +30,43 @@ export const useTaskStore = defineStore("taskStore", {
         alert("Ooops! Something went wrong");
       }
     },
-    addTask(task) {
+    async addTask(task) {
       this.tasks.push(task);
+      try {
+        const response = await fetch("http://localhost:3000/tasks", {
+          method: "POST",
+          body: JSON.stringify(task),
+          headers: { "Content-Type": "application/json" },
+        });
+      } catch (e) {
+        alert("Oooops!Something went wrong");
+      }
     },
-    deleteTask(id) {
+    async deleteTask(id) {
       this.tasks = this.tasks.filter((task) => {
         return task.id !== id;
       });
+      try {
+        const response = await fetch("http://localhost:3000/tasks/" + id, {
+          method: "DELETE",
+        });
+      } catch (e) {
+        alert("Oooops!Something went wrong");
+      }
     },
-    toggleFav(id) {
+    async toggleFav(id) {
       const task = this.tasks.find((task) => task.id === id);
       task.isFavorite = !task.isFavorite;
+
+      try {
+        const response = await fetch("http://localhost:3000/tasks", {
+          method: "PATCH",
+          body: JSON.stringify({ isFavorite: task.isFavorite }),
+          headers: { "Content-Type": "application/json" },
+        });
+      } catch (e) {
+        alert("Oooops!Something went wrong");
+      }
     },
   },
 });
