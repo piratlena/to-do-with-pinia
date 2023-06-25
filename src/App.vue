@@ -13,6 +13,12 @@
     </div>
 
     <nav class="filter">
+      <button
+        class="btn-reset"
+        @click="taskStore.$reset"
+      >
+        reset
+      </button>
       <button @click="filter = 'all'">All tasks</button>
       <button @click="filter = 'favorites'">Favorites</button>
     </nav>
@@ -49,8 +55,6 @@
         <TaskDetails :task="task" />
       </div>
     </div>
-
-    <button @click="taskStore.$reset">reset</button>
   </main>
 </template>
 
